@@ -11,7 +11,7 @@ export const signIn = (access_token: string) => {
             localStorage.setItem("username", res.user.username)
             dispatch({type: AuthActionTypes.SIGN_IN, payload: res})
         } catch (e) {
-            console.log('error sign in')
+            dispatch({type: AuthActionTypes.SIGN_IN_ERROR, error: 'Error Sign In'})
         }
     }
 }

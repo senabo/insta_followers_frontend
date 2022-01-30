@@ -15,12 +15,18 @@ export interface AuthState {
 }
 
 export enum AuthActionTypes {
-    SIGN_IN = 'SIGN_IN'
+    SIGN_IN = 'SIGN_IN',
+    SIGN_IN_ERROR = 'SIGN_IN_ERROR'
 }
 
-interface SignUpAction {
+interface SignInAction {
     type: AuthActionTypes.SIGN_IN;
     payload: SignInPost;
 }
 
-export type AuthAction = SignUpAction
+interface SignInErrorAction {
+    type: AuthActionTypes.SIGN_IN_ERROR;
+    error: string;
+}
+
+export type AuthAction = SignInAction | SignInErrorAction

@@ -7,13 +7,21 @@ const initialState: AuthState = {
     error: null
 }
 
-export const authReducer = (state = initialState, action: AuthAction): AuthState => {
+export const authReducer = (
+    state = initialState,
+    action: AuthAction
+): AuthState => {
     switch (action.type) {
         case AuthActionTypes.SIGN_IN:
             return {
                 ...initialState,
                 auth_token: action.payload.auth_token,
                 user: action.payload.user
+            }
+        case AuthActionTypes.SIGN_IN_ERROR:
+            return {
+                ...initialState,
+                error: action.error
             }
         default:
             return state

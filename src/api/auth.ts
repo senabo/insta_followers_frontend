@@ -1,6 +1,6 @@
 import {axios} from "./index";
 
-const SIGN_IN_URL = 'api/auth/signup/social/'
+const SIGN_IN_URL = 'afuth/signup/social/'
 const SOCIAL_PROVIDER = 'instagram'
 
 export const authAPI = {
